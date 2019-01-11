@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <style>
+      .bleu {
+        background-color: beige;
+      }
+
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 bleu">
+          Destination
+          <input
+            class="form-control"
+            id="adress0"
+            placeholder="Enter address"
+          />
+          <div class="form-group">
+            <label for="travelOptions">Travel Modes</label>
+            <select class="form-control" id="travelOptions">
+              <option selected="selected">DRIVING</option>
+              <option>BICYCLING</option>
+              <option>TRANSIT</option>
+              <option>WALKING</option>
+            </select>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="javascript:compute()"
+          >
+            Compute
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="javascript:clearMap()"
+          >
+            Clear Map
+          </button>
+        </div>
+        <div class="col-6 bleu">
+          Origine
+          <input
+            class="form-control"
+            id="adress1"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress2"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress3"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress4"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress5"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress6"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress7"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress8"
+            placeholder="Enter address"
+          />
+          <input
+            class="form-control"
+            id="adress9"
+            placeholder="Enter address"
+          />
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAWmSTK_5vW944i8kUyotoFxJaTRlr61ns&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="javascripts/maptools.js"></script>
+  </body>
+</html>
